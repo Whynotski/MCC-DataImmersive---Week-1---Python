@@ -5,20 +5,46 @@
 #write a program that calculates the salary for the week of the employees listed below.
 #If an employee worked more than 40 hours that week, then
 #   calculate the remaining hours as time and a half (1.5x the normal rate).
+
 # The program should print their name and salary earned.
 
+#First - set counter to zero
+# Second - create a dictionary of key value pairs, where the key is the employee number and
+#the value is an array of employee information provided.
 
-name=input("Enter Employee Name:  ")
+#counter
+count=0
 
-hours=input("Enter Hours worked:")
-int(hours)
-rate=input("Enter Hourly Rate:")
-int(rate)
-if int(hours) <= 40:
-  pay = int(hours) * int(rate)
-else:
-  pay = int(hours) * int(rate) * 1.5
-int(pay)
-print("Name: ", name, "your earned salary is $", pay)
+#dictionary
+employeeList = {'001':['Mary', 15.0, 49],
+'002':['John', 22.0, 25],
+'003':['Bob', 35.0, 4],
+'004':[ 'Mel',43.0, 62],
+'005':['Jen', 17.0, 33],
+'006':['Sue', 29.0, 45],
+'007':['Ken', 40.0, 36],
+'008':['Dave',20.0, 17],
+'009':['Beth',37.0, 37],
+'010':['Ray',16.50, 80]}
 
 
+#create a for loop to iterate through list
+
+for employeeNum, employeeDetail in employeeList.items():
+ 
+  
+    hour = employeeDetail[2]
+    rate = employeeDetail[1]
+    if hour <= 40:
+      pay =  hour * rate
+    else:
+      pay = hour * rate * 1.5
+
+print(employeeDetail[0], ", your earned salary this week is $", pay)
+
+count +=1
+if count == "010":
+    print("This week's payroll is finished!! ")
+
+
+ 
